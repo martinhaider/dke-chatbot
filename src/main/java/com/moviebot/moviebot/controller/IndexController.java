@@ -32,8 +32,9 @@ public class IndexController {
             QuerySolution soln = results.nextSolution();
             RDFNode movie = soln.get("movie");
             movieList.add(movie.toString());
-            System.out.println(movie);
         }
+
+        q.close();
 
         return movieList;
     }
@@ -49,8 +50,9 @@ public class IndexController {
             QuerySolution soln = results.nextSolution();
             RDFNode director = soln.get("director");
             directorList.add(director.toString());
-            System.out.println(director);
         }
+
+        q.close();
 
         return directorList;
     }
